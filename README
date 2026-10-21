@@ -1,35 +1,28 @@
 OWAMAS supplementary materials — preparation copy (Step 3)
 
 PURPOSE
-Reproduce the aggregation analysis from retained LLM predictions, without
-new LLM calls or an API key. This is reconstructed analysis code, not the
-original prediction-generation code. The supplied notebook and CSVs are
-unchanged copies. No new analysis was run during packaging.
+Reproduce the aggregation analysis using retained LLM predictions, without making new LLM calls or using an API key. This is reconstructed analysis code, not the
+original prediction-generation code. The supplied notebook and CSVs are unchanged copies. No new analysis was run during packaging.
 
 FILES
-OWAMAS_NEW.ipynb: analysis notebook with saved outputs.
+OWAMAS_NEW.ipynb: analysis notebook with saved outputs. 
 econlogic_gpt_results.csv: 650 GPT question records.
 econlogic_claude1_results.csv: 650 Claude question records.
-file_manifest.json: SHA-256 checksums and sizes of these files.
 
 GOOGLE COLAB INSTRUCTIONS
 1. Extract this archive on your computer.
 2. Open Google Colab and upload OWAMAS_NEW.ipynb.
 3. Use a fresh runtime and execute all 14 cells in order.
-4. When cell 3 requests an upload, select BOTH CSV files from this package.
-   Keep their filenames unchanged. No Google Drive mount is required.
-5. Continue running cells in order. Previously saved outputs are retained
-   in the supplied notebook; execution produces new outputs for your run.
+4. When cell 3 requests an upload, select BOTH CSV files from this package. Keep their filenames unchanged. No Google Drive mount is required.
+5. Continue running cells in order. Previously saved outputs are retained in the supplied notebook; execution produces new outputs for your run.
 6. Check the expected results below.
-7. The final cell downloads the two PDF figures in OWAMAS_paper_figures.zip.
-   It does not download the analysis tables or audit files.
+7. The final cell downloads the two PDF figures in OWAMAS_paper_figures.zip. It does not download the analysis tables or audit files.
 
 OUTPUTS
-Each run writes tables/, figures/, and audit/ under
-/content/owamas/outputs/<run_id>/ . The run ID changes on each setup run.
-Download the required tables and audit files before ending the Colab session:
-/content is temporary. The audit folder records input checksums, validation,
-Python/package versions, and analysis settings.
+Each run writes tables/, figures/, and audit/ under /content/owamas/outputs/<run_id>/ . 
+The run ID changes on each setup run. 
+Download the required tables and audit files before ending the Colab session: /content is temporary. 
+The audit folder records input checksums, validation, Python/package versions, and analysis settings.
 
 EXPECTED RESULTS
 Retained sample sizes: agent GPT 650; agent Claude 649;
@@ -43,16 +36,14 @@ Only cross-model OWAMAS at orness 0 versus plurality is significant after
 Holm adjustment (p=0.033091); OWAMAS performs worse.
 
 SOFTWARE
-Requires numpy, pandas, scipy, statsmodels, matplotlib and the Colab upload/
-download interface. Cell 1 installs the scientific packages without version
-pins, so a new installation may differ from the saved execution environment.
-Saved output reports numpy 2.1.3, pandas 2.2.3, scipy 1.16.3,
-statsmodels 0.15.0, matplotlib 3.10.0. These are recorded versions,
-not a newly tested installation specification. Each new run writes its
-actual requirements.txt and Python version into the audit folder.
+Requires numpy, pandas, scipy, statsmodels, matplotlib and the Colab upload/ download interface. 
+Cell 1 installs the scientific packages without version pins, so a new installation may differ from the saved execution environment.
+Saved output reports numpy 2.1.3, pandas 2.2.3, scipy 1.16.3, statsmodels 0.15.0, matplotlib 3.10.0. 
+These are recorded versions, not a newly tested installation specification. 
+Each new run writes its actual requirements.txt and Python version into the audit folder.
 
 PREPARATION STATUS
-Code matches the previously verified analysis notebook. Input files match
-the previously verified CSVs. Original prompts, generation details, a data
-dictionary, and documented domain-label provenance are not yet included.
-A pinned installation remains to be tested before final publication release.
+Code matches the previously verified analysis notebook. 
+Input files match the previously verified CSVs. 
+Original prompts, generation details, a data dictionary, and documented domain-label provenance are not yet included.
+
